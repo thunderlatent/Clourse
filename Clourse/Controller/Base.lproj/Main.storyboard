@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Clourse" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hv1-OA-V2f">
+                                <rect key="frame" x="191.5" y="638" width="31" height="30"/>
+                                <state key="normal" title="登入"/>
+                                <connections>
+                                    <segue destination="MGZ-pI-wtK" kind="show" identifier="loginSegue" id="xW6-TA-o90"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="歡迎來到帳號登入測試" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFw-jI-JYd">
+                                <rect key="frame" x="120" y="125" width="174" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="尚未登入" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fcv-gS-iKF">
+                                <rect key="frame" x="172" y="203" width="70" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Fcv-gS-iKF" firstAttribute="top" secondItem="DFw-jI-JYd" secondAttribute="bottom" constant="57" id="3TW-6r-602"/>
+                            <constraint firstItem="hv1-OA-V2f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3fy-eG-6N0"/>
+                            <constraint firstItem="DFw-jI-JYd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="80C-o8-0s4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hv1-OA-V2f" secondAttribute="bottom" constant="194" id="UFC-ak-amr"/>
+                            <constraint firstItem="DFw-jI-JYd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="81" id="Y48-bC-MlN"/>
+                            <constraint firstItem="Fcv-gS-iKF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zf8-TD-kJE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="showUserID" destination="Fcv-gS-iKF" id="Hhn-R7-HMl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="114.50892857142857"/>
+        </scene>
+        <!--Input Name View Controller-->
+        <scene sceneID="snk-od-IWS">
+            <objects>
+                <viewController id="MGZ-pI-wtK" customClass="InputNameViewController" customModule="Clourse" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="loginView" id="qk8-8h-khN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="帳號" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="656-Y3-j2i">
+                                <rect key="frame" x="178.5" y="202" width="57" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="IDChangeValue:" destination="tn4-Jb-uuk" eventType="valueChanged" id="HgT-lS-qce"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密碼" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SgC-7G-L1x">
+                                <rect key="frame" x="178.5" y="269" width="57" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JhX-OM-zZ6">
+                                <rect key="frame" x="191.5" y="333" width="31" height="30"/>
+                                <state key="normal" title="確認"/>
+                                <connections>
+                                    <action selector="login:" destination="MGZ-pI-wtK" eventType="touchUpInside" id="hSy-y9-avg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密碼錯誤" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMW-Si-26g">
+                                <rect key="frame" x="172.5" y="388" width="69.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="JhX-OM-zZ6" firstAttribute="centerX" secondItem="qk8-8h-khN" secondAttribute="centerX" id="572-Da-wvA"/>
+                            <constraint firstItem="656-Y3-j2i" firstAttribute="top" secondItem="hig-kL-2mb" secondAttribute="top" constant="202" id="AeY-NJ-FyF"/>
+                            <constraint firstItem="MMW-Si-26g" firstAttribute="top" secondItem="JhX-OM-zZ6" secondAttribute="bottom" constant="25" id="FZM-VB-2fT"/>
+                            <constraint firstItem="656-Y3-j2i" firstAttribute="centerX" secondItem="qk8-8h-khN" secondAttribute="centerX" id="PKJ-CP-QSO"/>
+                            <constraint firstItem="JhX-OM-zZ6" firstAttribute="top" secondItem="SgC-7G-L1x" secondAttribute="bottom" constant="30" id="Wij-3a-TaV"/>
+                            <constraint firstItem="MMW-Si-26g" firstAttribute="centerX" secondItem="qk8-8h-khN" secondAttribute="centerX" id="cHp-Du-Nur"/>
+                            <constraint firstItem="SgC-7G-L1x" firstAttribute="centerX" secondItem="qk8-8h-khN" secondAttribute="centerX" id="fjf-91-kVw"/>
+                            <constraint firstItem="SgC-7G-L1x" firstAttribute="top" secondItem="656-Y3-j2i" secondAttribute="bottom" constant="33" id="idx-NZ-CX7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hig-kL-2mb"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="UOk-Hq-LuB"/>
+                    <connections>
+                        <outlet property="ID" destination="656-Y3-j2i" id="ILL-de-PK4"/>
+                        <outlet property="passwordLabel" destination="SgC-7G-L1x" id="h9r-QH-JDm"/>
+                        <outlet property="showError" destination="MMW-Si-26g" id="Y6B-WP-EQh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Az-1J-gkE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="tn4-Jb-uuk" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="841" y="115"/>
+        </scene>
+    </scenes>
+</document>
